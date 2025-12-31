@@ -200,6 +200,8 @@ export default function Header() {
                   {item.href ? (
                     <Link
                       href={item.href}
+                      target={item.target}
+                      rel={item.rel}
                       className="relative px-4 py-2 text-sm font-semibold text-white hover:text-primary-100 transition-all duration-200 rounded-lg hover:bg-white/30 hover:bg-opacity-10 group flex items-center"
                     >
                       <span className="relative z-10">{item.label}</span>
@@ -330,6 +332,8 @@ export default function Header() {
                   {item.href ? (
                     <Link
                       href={item.href}
+                      target={item.target}
+                      rel={item.rel}
                       className="group flex items-center px-4 py-3 text-base font-semibold text-white hover:text-primary-100 hover:bg-white hover:bg-opacity-10 rounded-xl transition-all duration-200"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >

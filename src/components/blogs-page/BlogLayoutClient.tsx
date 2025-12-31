@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Forum } from "next/font/google";
 import { urlFor } from "@/lib/imageBuilder";
 import type { PortableTextBlock } from "@portabletext/types";
 import { PortableText } from "@portabletext/react";
@@ -19,6 +20,13 @@ type BlogLayoutClientProps = {
   categories: Category[];
   trendingPosts: TrendingPost[];
 };
+
+const forum = Forum({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-forum",
+  display: "swap",
+});
 
 export default function BlogLayoutClient({
   posts,
@@ -64,12 +72,12 @@ export default function BlogLayoutClient({
   }, [activeCategory, posts, searchTerm]);
 
   return (
-    <main className="min-h-screen bg-[#ffffff] text-[#0f172a]">
+    <main className={`${forum.variable} min-h-screen bg-[#ffffff] text-[#0f172a]`}>
       {/* Hero Section */}
       <section
         className="relative overflow-hidden text-white pt-32 pb-20"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(22,44,69,0.35), rgba(30,58,95,0.55)), url("https://cf.bstatic.com/xdata/images/hotel/max1024x768/578679517.jpg?k=8a8c9c18ed2f6228c7ac2ee83c900e03269d75aa71e4568f9844ddfdb858b3fb&o=")`,
+          backgroundImage: `linear-gradient(135deg, rgba(22,44,69,0.35), rgba(30,58,95,0.55)), url("https://res.cloudinary.com/dvvcwzp4n/image/upload/v1767221721/blog-writing_qeie73.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -77,7 +85,7 @@ export default function BlogLayoutClient({
         <div className="absolute inset-0 bg-white/5 backdrop-blur-xs pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-6 md:px-10">
           <div className="max-w-3xl ">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 font-serif">
+            <h1 className="text-5xl md:text-7xl leading-tight mb-6 font-serif">
               Our Blog
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 leading-relaxed font-sans">
