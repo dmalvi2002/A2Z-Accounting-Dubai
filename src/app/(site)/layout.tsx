@@ -23,15 +23,16 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/wp-content/uploads/2025/03/fav-icon-150x150.png",
+        url: "/assets/favico.ico",
         sizes: "32x32",
       },
       {
-        url: "/wp-content/uploads/2025/03/fav-icon-300x300.png",
+        url: "/assets/favico.ico",
         sizes: "192x192",
       },
     ],
-    apple: "/wp-content/uploads/2025/03/fav-icon-300x300.png",
+    apple: "/assets/favico.ico",
+    shortcut: "/assets/favico.ico",
   },
   robots: "max-image-preview:large",
   alternates: {
