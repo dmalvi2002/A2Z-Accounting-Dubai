@@ -128,9 +128,11 @@ const WhyDubai: React.FC = () => {
 
             {/* Mobile CTA (Visible only on small screens) */}
             <div className="sm:col-span-2 mt-8 lg:hidden">
+              <a href="/why-dubai">
               <button className="w-full inline-flex items-center justify-center px-8 py-4 bg-[#84C9E2] text-[#162C45] font-bold rounded-lg shadow-lg font-sans">
                 Discover Dubai Opportunities
               </button>
+              </a>
             </div>
           </div>
         </div>

@@ -660,9 +660,11 @@ export default function WhoWeServe() {
               &ldquo;No other country offers such a powerful combination of tax
               efficiency, safety, and long-term stability.&rdquo;
             </p>
-            <button className="bg-[#84C9E2] text-[#162C45] !font-dans font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:!bg-[#73b2c9] hover:!text-[#162C45] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
+             <a href="/contact-us">
+            <button className="bg-[#84C9E2] cursor-pointer text-[#162C45] !font-sans font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:!bg-[#73b2c9] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
               Get Free Consultation
             </button>
+            </a>
           </div>
         </div>
       </section>

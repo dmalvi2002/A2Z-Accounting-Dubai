@@ -92,7 +92,7 @@ export default function WhyDubaiPage() {
         </div>
 
         {/* Floating Badges */}
-        <div className="hidden md:block absolute top-[13%] left-[6%] z-20 glass-badge px-4 py-2 md:px-6 md:py-3 rounded-full animate-[bounce_6s_infinite]">
+        <div className="hidden md:block absolute top-[18%] left-[6%] z-20 glass-badge px-4 py-2 md:px-6 md:py-3 rounded-full animate-[bounce_6s_infinite]">
           <span className="text-white font-bold text-[10px] md:text-sm tracking-widest uppercase">
             Low Corporate Tax
           </span>
@@ -497,10 +497,11 @@ export default function WhyDubaiPage() {
               &ldquo;No other country offers such a powerful combination of tax
               efficiency, safety, and long-term stability.&rdquo;
             </p>
-
-            <button className="bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:!bg-[#73b2c9] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
+            <a href="/contact-us">
+            <button className="bg-[#84C9E2] cursor-pointer text-[#162C45] !font-sans font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md hover:!bg-[#73b2c9] transition-all duration-300 hover:scale-105 shadow-lg shadow-[#84C9E2]/20">
               Get Free Consultation
             </button>
+            </a>
           </div>
         </div>
       </section>

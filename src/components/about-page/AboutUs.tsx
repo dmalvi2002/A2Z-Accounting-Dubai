@@ -432,6 +432,7 @@ export default function AboutUs() {
             />
 
             <div className="absolute bottom-8 left-8">
+              <a href="/contact-us">
               <div className="bg-secondary/90 backdrop-blur text-primary px-6 py-3 rounded flex items-center gap-4 cursor-pointer hover:bg-white transition-colors">
                 <span className="!font-serif font-bold text-sm">
                   Start Your UAE Journey
@@ -450,6 +451,7 @@ export default function AboutUs() {
                   ></path>
                 </svg>
               </div>
+              </a>
             </div>
           </div>
         </section>
@@ -624,7 +626,7 @@ export default function AboutUs() {
         </div>
 
         <div className="container mx-auto px-6 text-center max-w-6xl relative z-10 ">
-          <h2 className="text-2xl mt-0 md:text-4xl font-forum mb-6 md:mb-8 text-white relative inline-block">
+          <h2 className="text-2xl mt-0 md:text-4xl font-serif mb-6 md:mb-8 text-white relative inline-block">
             Dubai gives you more freedom, more opportunity,
             <br className="hidden md:block" />
             more profit — and far less stress.
@@ -632,8 +634,7 @@ export default function AboutUs() {
 
           <p className="text-lg md:text-xl font-light font-dm text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
             For entrepreneurs who want to elevate both their income and
-            lifestyle, no other country offers such a powerful combination of
-            tax efficiency, safety, and long-term stability.
+            lifestyle.
           </p>
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-lg inline-block mx-auto max-w-2xl shadow-2xl shadow-primary/50 relative group">
@@ -643,10 +644,11 @@ export default function AboutUs() {
               &quot;No other country offers such a powerful combination of tax
               efficiency, safety, and long-term stability.&quot;
             </p>
-
-            <button className="bg-secondary hover:bg-secondary/90 text-primary hover:text-[#162C45] font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
+            <a href="/contact-us">
+            <button className="bg-secondary cursor-pointer hover:bg-secondary/90 text-primary hover:text-[#162C45] font-dm font-bold text-sm md:text-base px-8 py-3 md:px-10 md:py-4 rounded-md transition-all duration-300 hover:scale-105 shadow-lg shadow-secondary/20">
               Get Free Consultation
             </button>
+            </a>
           </div>
         </div>
       </section>
