@@ -247,7 +247,7 @@ export default function ContactSection() {
             <div className="space-y-4">
               {/* Career Link */}
               <a
-                href="#"
+                href="mailto:info@a2zaccounting-dubai.co.uk"
                 className="bg-[#F2F4F6] p-6 rounded flex items-center justify-between group hover:bg-white hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
@@ -292,7 +292,7 @@ export default function ContactSection() {
 
               {/* General Inquiries Link */}
               <a
-                href="#"
+                href="mailto:info@a2zaccounting-dubai.co.uk"
                 className="bg-[#F2F4F6] p-6 rounded flex items-center justify-between group hover:bg-white hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
@@ -668,7 +668,7 @@ export default function ContactSection() {
                     >
                       By submitting this form you agree to our{" "}
                       <a
-                        href="#"
+                        href="/privacy"
                         className="font-bold text-gray-600 hover:text-[#84C9E2]"
                       >
                         Privacy Policy

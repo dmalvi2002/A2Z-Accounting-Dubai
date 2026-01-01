@@ -376,7 +376,7 @@ const FAQPage = () => {
               team is here to help you.
             </p>
             <a
-              href="#contact"
+              href="/contact-us"
               className="inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-[#84C9E2] text-[#162C45] !font-sans font-bold text-base transition-all duration-300 hover:bg-white hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-50"
             >
               Contact Support

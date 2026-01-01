@@ -81,13 +81,25 @@ const Footer = () => {
             <h4 className="!font-forum !text-white !text-lg !mb-3">Company</h4>
             <nav className="!flex !flex-col !gap-2">
               <a
-                href="/about"
+                href="/about-us"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 About Us
               </a>
               <a
-                href="/contact"
+                href="/why-dubai"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
+              >
+                Why Dubai
+              </a>
+              <a
+                href="/who-we-serve"
+                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
+              >
+                Who We Serve
+              </a>
+              <a
+                href="/contact-us"
                 className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
               >
                 Contact
@@ -98,12 +110,6 @@ const Footer = () => {
               >
                 Blog
               </Link>
-              <a
-                href="/careers"
-                className="!text-[#CFE9FB] hover:!text-white !font-dm-sans !text-sm"
-              >
-                Careers
-              </a>
             </nav>
           </div>
 
@@ -187,7 +193,7 @@ const Footer = () => {
             <p className="!text-[#BBDFF6] !text-sm !font-dm-sans">
               © {new Date().getFullYear()} A2Z Accounting. All rights reserved.
             </p>
-            <div className="!flex !gap-4 !items-center">
+            {/* <div className="!flex !gap-4 !items-center">
               <a
                 href="/privacy"
                 className="!text-[#CFE9FB] hover:!text-white !text-sm !font-dm-sans"
@@ -200,7 +206,7 @@ const Footer = () => {
               >
                 Terms
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

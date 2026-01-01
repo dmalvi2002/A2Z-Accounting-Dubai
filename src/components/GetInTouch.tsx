@@ -529,7 +529,7 @@ const GetInTouch: React.FC = () => {
                   <div className="elementor-widget-container">
                     <p>
                       By submitting this form you agree to our{" "}
-                      <a href="#">Privacy Policy</a>. Optimum may contact you
+                      <a href="/privacy">Privacy Policy</a>. Optimum may contact you
                       via email or phone for scheduling or marketing purposes.
                     </p>
                   </div>

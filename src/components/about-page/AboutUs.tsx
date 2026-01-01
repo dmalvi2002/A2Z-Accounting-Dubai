@@ -474,7 +474,7 @@ export default function AboutUs() {
                 Setup → Banking → Accounting → Compliance
               </p>
               <a
-                href="#"
+                href="/contact-us"
                 className="w-full bg-secondary hover:bg-secondaryHover text-primary !font-sans font-bold py-3 px-6 rounded flex items-center justify-between text-sm transition-colors"
               >
                 Book Consultation
@@ -547,7 +547,7 @@ export default function AboutUs() {
                   a2z accounting
                 </div>
                 <a
-                  href="#"
+                  href="/contact-us"
                   className="bg-secondary hover:bg-secondaryHover text-primary !font-sans text-xs font-bold uppercase py-3 px-6 rounded flex items-center justify-between transition-colors"
                 >
                   Contact us

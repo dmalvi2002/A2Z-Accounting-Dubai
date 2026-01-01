@@ -396,7 +396,7 @@ export default function Header() {
               {/* Mobile Contact Now Button */}
               <div className="pt-6 border-t border-primary-500/30 mt-6">
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="group relative w-full bg-white text-primary-600 hover:bg-gray-50 px-6 py-3 rounded-md text-center font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg flex items-center justify-center overflow-hidden"
                 >
