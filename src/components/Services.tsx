@@ -142,7 +142,7 @@ const Services: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-icon-list-text">
-                        Business licenses
+                        Business licences
                       </span>
                     </li>
                     <li className="elementor-icon-list-item">

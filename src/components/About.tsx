@@ -24,13 +24,13 @@ const About = () => {
       title: "Tailored Solutions",
       isOpen: false,
       content: [
-        "We know your organization is unique—and your strategy should reflect that. At the core of our approach is a belief in personalization. We take the time to listen, learn, and understand your company's goals, culture, challenges, and competitive landscape.",
+        "We know your organisation is unique—and your strategy should reflect that. At the core of our approach is a belief in personalisation. We take the time to listen, learn, and understand your company's goals, culture, challenges, and competitive landscape.",
         "Rather than applying generic frameworks, we co-create tailored solutions that are grounded in your reality and designed to be both actionable and sustainable.",
       ],
       features: [
         "Cross-industry expertise",
         "We help execute solutions that work in the real world",
-        "Every strategy is customized to your specific needs",
+        "Every strategy is customised to your specific needs",
       ],
       contentContainerId: "80875d6",
       textWidgetId: "46152d7",
@@ -41,7 +41,7 @@ const About = () => {
       title: "Data-Driven Approach",
       isOpen: false,
       content: [
-        "In today's fast-paced world, intuition alone isn't enough. That's why our strategies are grounded in data—providing you with the clarity and confidence needed to make high-stakes decisions. We use advanced analytics, predictive modeling, and performance metrics to identify patterns, validate hypotheses, and uncover growth opportunities.",
+        "In today's fast-paced world, intuition alone isn't enough. That's why our strategies are grounded in data—providing you with the clarity and confidence needed to make high-stakes decisions. We use advanced analytics, predictive modelling, and performance metrics to identify patterns, validate hypotheses, and uncover growth opportunities.",
         "By turning complex data into meaningful insights, we empower you to act decisively and strategically. We don't just show you what's happening—we help you understand why, and what to do next.",
       ],
       features: [
@@ -126,7 +126,7 @@ const About = () => {
           >
             <div className="elementor-widget-container">
               <span className="elementor-heading-title elementor-size-default">
-                We specialize in helping small businesses thrive by providing
+                We specialise in helping small businesses thrive by providing
                 expert guidance in business planning and growth strategy.
               </span>
             </div>

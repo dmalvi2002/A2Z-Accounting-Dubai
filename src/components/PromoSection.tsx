@@ -104,7 +104,7 @@ const PromoSection: React.FC = () => {
                         ></i>
                       </span>
                       <span className="elementor-button-text">
-                        Let us optimize it for you
+                        Let us optimise it for you
                       </span>
                     </span>
                   </a>

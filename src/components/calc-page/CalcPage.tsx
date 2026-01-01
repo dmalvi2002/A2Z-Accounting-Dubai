@@ -17,13 +17,13 @@ const CalculatorPage: React.FC = () => {
           {/* Left Side: Marketing Section */}
           <div className="space-y-8">
             <h2 className="text-4xl lg:text-5xl font-bold font-serif text-primary leading-tight">
-              Maximize Your Tax Savings with UAE Business Setup
+              Maximise Your Tax Savings with UAE Business Setup
             </h2>
             <p className="text-lg text-gray-600 font-sans leading-relaxed">
               Relocate your business to the UAE and benefit from lower corporate
               tax rates, expert guidance on company setup, and seamless
               compliance. Our end-to-end services ensure a smooth transition,
-              helping you optimize your finances while maintaining operations in
+              helping you optimise your finances while maintaining operations in
               the UK.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
