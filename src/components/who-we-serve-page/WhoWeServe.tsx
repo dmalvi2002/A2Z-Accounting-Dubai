@@ -180,7 +180,7 @@ export default function WhoWeServe() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start">
             {/* Left Sticky Col */}
-            <div className="md:sticky md:top-28 md:w-5/12 flex-shrink-0">
+            <div className="md:sticky md:top-28 md:w-6/12 flex-shrink-0">
               <div className="reveal-up text-center md:text-left">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#84C9E2]/10 border border-[#84C9E2]/20 mb-8">
                   <span className="w-2 h-2 rounded-full bg-[#84C9E2]"></span>
