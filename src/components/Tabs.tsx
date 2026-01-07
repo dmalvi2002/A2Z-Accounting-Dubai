@@ -71,8 +71,8 @@ const tabs: TabConfig[] = [
       },
     ],
     metrics: [
-      { label: "Tax reduction", value: "Up to 30%" },
-      { label: "Setup cost", value: "£5K-£15K" },
+      { label: "Tax reduction", value: "Min 30%" },
+      { label: "Setup cost", value: "~ £5K" },
       { label: "Processing speed", value: "2-4 weeks" },
     ],
     cta: {

@@ -1,17 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Calculator: React.FC = () => {
-  const [annualTurnover, setAnnualTurnover] = useState<number>(500000);
+  const [annualTurnover, setAnnualTurnover] = useState<number>(150000);
   const [showResults, setShowResults] = useState<boolean>(false);
   const [isCalculating, setIsCalculating] = useState<boolean>(false);
+  const [aedToGbpRate, setAedToGbpRate] = useState<number | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    const loadRate = async () => {
+      try {
+        const response = await fetch("https://open.er-api.com/v6/latest/AED");
+        if (!response.ok) {
+          throw new Error("Failed to fetch AED to GBP rate");
+        }
+        const data = await response.json();
+        const rate = Number(data?.rates?.GBP);
+        if (isMounted && Number.isFinite(rate) && rate > 0) {
+          setAedToGbpRate(rate);
+        }
+      } catch {
+        if (isMounted) {
+          setAedToGbpRate(0.22);
+        }
+      }
+    };
+
+    loadRate();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const grossProfit = Math.max(annualTurnover, 0);
-  const ukCorporateTax = grossProfit * 0.25;
+  let ukCorporateTax = 0;
+  if (grossProfit <= 50000) {
+    ukCorporateTax = grossProfit * 0.19;
+  } else if (grossProfit <= 250000) {
+    ukCorporateTax = grossProfit * 0.25 - (250000 - grossProfit) * 0.015;
+  } else {
+    ukCorporateTax = grossProfit * 0.25;
+  }
   const ukNetProfit = grossProfit - ukCorporateTax;
   const ukEffectiveRate =
     grossProfit > 0 ? (ukCorporateTax / grossProfit) * 100 : 0;
-  const isUaeTaxApplied = grossProfit > 80000;
-  const uaeCorporateTax = isUaeTaxApplied ? grossProfit * 0.09 : 0;
+  const safeAedToGbpRate = 0.22;
+  const uaeThresholdGbp = 375000 * safeAedToGbpRate;
+  const isUaeTaxApplied = grossProfit > uaeThresholdGbp;
+  const uaeCorporateTax = isUaeTaxApplied
+    ? (grossProfit - uaeThresholdGbp) * 0.09
+    : 0;
   const uaeNetProfit = grossProfit - uaeCorporateTax;
   const uaeEffectiveRate =
     grossProfit > 0 ? (uaeCorporateTax / grossProfit) * 100 : 0;
@@ -49,13 +88,13 @@ const Calculator: React.FC = () => {
             <h5 className="text-2xl  text-primary font-serif font-semibold mb-1">
               Tax Savings in UAE
             </h5>
-            <p className="text-base  text-primary font-sans">
+            <p className="text-base  text-primary font-sans mr-8">
               Setting up in the UAE could qualify you for small business relief
               and save you up to
             </p>
           </div>
-          <p className="text-3xl  text-primary font-bold">
-            £{taxSavings.toLocaleString()}
+          <p className="text-2xl  text-primary font-bold">
+            £{Math.round(taxSavings).toLocaleString()}
           </p>
         </div>
       )}
@@ -64,7 +103,7 @@ const Calculator: React.FC = () => {
       <div className="relative z-10 text-white grid grid-cols-1 gap-4 mb-6">
         <div>
           <label className="block text-sm font-medium text-white mb-2 font-sans">
-            Annual Turnover (£)
+            Annual Profit (£)
           </label>
           <input
             type="number"
@@ -74,7 +113,7 @@ const Calculator: React.FC = () => {
               setShowResults(false);
             }}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-            placeholder="500000"
+            placeholder="150000"
           />
         </div>
       </div>
@@ -92,7 +131,7 @@ const Calculator: React.FC = () => {
           <button
             onClick={() => {
               setShowResults(false);
-              setAnnualTurnover(500000);
+              setAnnualTurnover(150000);
             }}
             className="px-4 py-2 bg-red-300 text-base hover:bg-red-400 text-primary font-semibold rounded-md transition-all duration-300 font-serif"
           >
@@ -121,7 +160,7 @@ const Calculator: React.FC = () => {
               <div className="flex justify-between">
                 <span className="text-gray-600 font-sans">Corporate Tax</span>
                 <span className="font-semibold text-red-600">
-                  £{ukCorporateTax.toLocaleString()}
+                  £{Math.round(ukCorporateTax).toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between">
@@ -142,7 +181,7 @@ const Calculator: React.FC = () => {
                   NET profit
                 </span>
                 <span className="font-bold text-green-600">
-                  £{ukNetProfit.toLocaleString()}
+                  £{Math.round(ukNetProfit).toLocaleString()}
                 </span>
               </div>
             </div>
@@ -165,7 +204,7 @@ const Calculator: React.FC = () => {
               <div className="flex justify-between">
                 <span className="text-gray-600 font-sans">Corporate Tax</span>
                 <span className="font-semibold text-green-600">
-                  £{uaeCorporateTax.toLocaleString()}
+                  £{Math.round(uaeCorporateTax).toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between">
@@ -177,11 +216,11 @@ const Calculator: React.FC = () => {
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600 font-sans">Applied If</span>
+                <span className="text-gray-600 font-sans">Actual Tax Rate</span>
                 <span className="font-semibold">
                   {isUaeTaxApplied
-                    ? "9% (above £80k)"
-                    : "0% (below £80k relief)"}
+                    ? "9%"
+                    : "0%"}
                 </span>
               </div>
               <hr className="my-3" />
@@ -190,7 +229,7 @@ const Calculator: React.FC = () => {
                   NET profit
                 </span>
                 <span className="font-bold text-green-600">
-                  £{uaeNetProfit.toLocaleString()}
+                  £{Math.round(uaeNetProfit).toLocaleString()}
                 </span>
               </div>
             </div>
