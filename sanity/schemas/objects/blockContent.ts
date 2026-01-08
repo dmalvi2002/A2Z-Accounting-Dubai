@@ -49,7 +49,7 @@ export default defineType({
       ],
     }),
     defineArrayMember({
-      type: "tableBlock",
+      type: "table",
     }),
   ],
 });

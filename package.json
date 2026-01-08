@@ -13,10 +13,11 @@
     "preview": "next build && next start"
   },
   "dependencies": {
-    "@portabletext/react": "^6.0.0",
     "@emailjs/browser": "^4.4.1",
+    "@portabletext/react": "^6.0.0",
     "@sanity/client": "^7.13.2",
     "@sanity/image-url": "^2.0.2",
+    "@sanity/table": "^2.0.1",
     "@sanity/vision": "^5.0.0",
     "groq": "^5.0.0",
     "lucide-react": "^0.561.0",

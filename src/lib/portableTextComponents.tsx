@@ -65,6 +65,7 @@ export const portableTextComponents: PortableTextComponents = {
       <li className="pl-2 text-slate-800">{children}</li>
     ),
   },
+  // Shared renderer for Sanity table blocks.
   types: {
     image: ({ value }) => {
       const url = value ? urlFor(value).width(1200).url() : "";
@@ -86,19 +87,33 @@ export const portableTextComponents: PortableTextComponents = {
         </div>
       );
     },
-    tableBlock: ({ value }) => {
+    table: ({ value }) => {
       const rows = value?.rows || [];
       if (!rows.length) return null;
       return (
         <div className="my-6 overflow-x-auto">
-          <table className="min-w-full border border-gray-200 text-sm">
-            <tbody>
+          <div className="overflow-hidden rounded-md shadow-sm">
+            <table className="min-w-full border-2 border-gray-200 bg-transparent text-sm">
+            <tbody className="bg-transparent">
               {rows.map((row: { cells: string[] }, rowIdx: number) => (
-                <tr key={rowIdx} className="border-b border-gray-200">
+                <tr
+                  key={rowIdx}
+                  className="border-b border-white/20"
+                  style={
+                    rowIdx === 0
+                      ? {
+                          background:
+                            "linear-gradient(90deg, rgba(132, 201, 226, 1) 0%, rgba(22, 44, 69, 1) 53%)",
+                        }
+                      : undefined
+                  }
+                >
                   {row.cells?.map((cell: string, cellIdx: number) => (
                     <td
                       key={cellIdx}
-                      className="px-3 py-2 align-top text-gray-800"
+                      className={`bg-transparent px-3 py-2 align-top ${
+                        rowIdx === 0 ? "text-white" : "text-gray-800"
+                      } border border-white/20`}
                     >
                       {cell}
                     </td>
@@ -106,7 +121,47 @@ export const portableTextComponents: PortableTextComponents = {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
+        </div>
+      );
+    },
+    tableBlock: ({ value }) => {
+      const rows = value?.rows || [];
+      if (!rows.length) return null;
+      return (
+        <div className="my-6 overflow-x-auto">
+          <div className="overflow-hidden rounded-md shadow-sm">
+            <table className="min-w-full border-2 border-gray-200 bg-transparent text-sm">
+            <tbody className="bg-transparent">
+              {rows.map((row: { cells: string[] }, rowIdx: number) => (
+                <tr
+                  key={rowIdx}
+                  className="border-b border-white/20"
+                  style={
+                    rowIdx === 0
+                      ? {
+                          background:
+                            "linear-gradient(90deg, rgba(132, 201, 226, 1) 0%, rgba(22, 44, 69, 1) 53%)",
+                        }
+                      : undefined
+                  }
+                >
+                  {row.cells?.map((cell: string, cellIdx: number) => (
+                    <td
+                      key={cellIdx}
+                      className={`bg-transparent px-3 py-2 align-top ${
+                        rowIdx === 0 ? "text-white" : "text-gray-800"
+                      } border border-white/20`}
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+            </table>
+          </div>
         </div>
       );
     },
